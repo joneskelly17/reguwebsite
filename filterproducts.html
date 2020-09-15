@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".button").click(function () {
+                var name = $(this).attr("data-filter");
+                if (name == "all"){
+                    $(".filter").show("2000");
+
+                }else {
+                    !$(".filter").not("."+name).hide("2000");
+                    !$(".filter").filter("."+name).show("2000");
+                }
+
+            });
+            $(".navigation a").click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+
+            });
+
+        });
+    </script>
+
+</head>
+<style>
+    body{
+        font-family: Arial,serif;
+        background-color: #efefef;
+
+    }
+    .navigation{
+        padding: 25px 0px;
+    }
+    .navigation a{
+        margin-right: 5px;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        padding: 10px 25px;
+        border-radius: 50px;
+        color: yellow;
+    }
+    .navigation a:hover {
+        background-color: red;
+        color: white;
+    }
+    .navigation a.active{
+        background-color: red;
+        border-color: red;
+        color: white;
+        transition: 0.6s ease;
+
+    }
+.ImageContainer{
+    display: inline-block;
+}
+    img{
+        margin: 5px;
+        width: 400px;
+        height: 250px;
+    }
+
+    .topnav{
+
+        overflow: hidden;
+
+
+
+    }
+    .topnav a{
+        float: right;
+        display: block;
+        border: 2px;
+        color: yellow;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: 0.6s ease;
+
+
+    }
+    .topnav a:hover{
+        background-color: gray;
+        color: black;
+
+
+    }
+    .topnav a.active{
+        background-color: red;
+        color: white;
+    }
+    * {
+        box-sizing: border-box;
+    }
+
+    .column {
+        float: left;
+        padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 500px) {
+        .column {
+            width: 100%;
+        }
+    }
+    .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .container:hover .overlay {
+        height: 100%;
+    }
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: darkred;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+    .container {
+        position: relative;
+        width: 100%;
+    }
+
+
+</style>
+<body background="img/red.jpg">
+<div class="main">
+
+    <div class="topnav">
+        <a  href="Contact.html">Contact Us</a>
+        <a class="active" href="filterproducts.html">Our Products</a>
+        <a  href="Home.html">Home</a>
+
+    </div>
+
+</div>
+
+<div style="text-align: center">
+   <div class="navigation">
+       <a href="#" data-filter="all" class="button active">All</a>
+       <a href="#" data-filter="laptops" class="button">Laptops</a>
+       <a href="#" data-filter="hardware" class="button">Computer Accessories</a>
+   </div>
+    <div class="row">
+    <div class="ImageContainer">
+
+        <div class="column">
+            <div class="filter laptops">
+                <div class="container" style="background: white">
+                    <img src="img/hppro.png" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>HP Probook</h1>
+                            <p>Core i5 <br>
+                                RAM:8GB <br>
+                                Space:1TB <br>
+                                WIN:10 PRO <br>
+                                Price: ksh 48,000 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter hardware">
+                <div class="container">
+                    <img src="img/bat.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>Hp DV6 Replacement battery</h1>
+                            <p>Price:
+                                Ksh 4,000 (Exc VAT) <br>
+                                Brand:HP </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter hardware">
+                <div class="container">
+                    <img src="img/del.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>Dell 452-BCDJ Docking Station with with 130 W AC Adapter</h1>
+                            <p>Price:
+                                Ksh 19,240 (Exc VAT) <br>
+                                Brand:Dell </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter hardware">
+                <div class="container"  style="background: white">
+                    <img src="img/portus.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>4-port USB</h1>
+                            <p>price:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter hardware">
+                <div class="container"  style="background: white">
+                    <img src="img/ssd.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>SSD Sun Disk</h1>
+                            <p>
+                                Space:128GB <br>
+                                Price: ksh 3500 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter hardware">
+                <div class="container"  style="background: white">
+                    <img src="img/adapter.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>Display Port Adapter</h1>
+                            <p>Price: ksh 2500 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter hardware">
+                <div class="container"  style="background: white">
+                    <img src="img/btheadset.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>Dockin</h1>
+                            <p>
+                                Bluetooth headsets <br>
+                                Price: ksh 2500 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+        <div class="filter laptops">
+            <div class="container">
+                <img src="img/HPEliteBook.png" >
+
+                <div class="overlay">
+                    <div class="text">
+                        <h2>HP EliteBook</h2>
+                        <p>Core:i7 <br> RAM:16GB <br> Space:512GB <br>  Windows 10 <br> Price:
+                            Ksh 205,000 (Exc VAT)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="column">
+            <div class="filter laptops">
+                <div class="container">
+                    <img src="img/asus.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>Asus X543U</h1>
+                            <p>Core:i3 <br> RAM:4GB <br> Space:1TB <br> Win:10 <br>Price:
+                                Ksh 37,500 (Exc VAT)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter laptops">
+                <div class="container">
+                    <img src="img/ashome.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>Asus Celeron</h1>
+                            <p> RAM:4GB <br> Space:1TB <br>WIN:10 15.6" <br> Price:
+                                Ksh 26,500 (Exc VAT) <br>Home Laptop</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter laptops">
+                <div class="container">
+                    <img src="img/Mac.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>MacBook Air 13</h1>
+                            <p> Core:i5 <br> RAM:8GB <br> SSD:128GB <br> Price:
+                                Ksh 137,000 (Exc VAT)<br> 2019 Model Laptop</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter laptops">
+                <div class="container">
+                    <img src="img/macb.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>MacBook Air 2020</h1>
+                            <p>core:i3 <br> RAM:8GB <br> Space:256GB <br> Price:
+                                Ksh 145,000 (Exc VAT)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter hardware">
+                <div class="container">
+                    <img src="img/cooling.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>Laptop Cooling Pad</h1>
+                            <p>Cursor LCP-850 Adjustable <br>
+                                Price:
+                                Ksh 5,500 (Exc VAT)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filter hardware">
+                <div class="container">
+                    <img src="img/maccharger.jpg" >
+
+                    <div class="overlay">
+                        <div class="text">
+                            <h1>Apple 45W MagSafe 2 Power Adapter</h1>
+                            <p>Price:
+                                Ksh 4000 (Exc VAT)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
